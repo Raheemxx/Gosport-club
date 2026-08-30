@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GO Sport Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0a;
+    --bolt:#f5b942;
+    --bolt-dark:#d99c2a;
+    --steel:#9a9a9a;
+    --paper:#f2f0eb;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html,body{
+    height:100%;
+    background:var(--ink);
+    font-family:'Inter',sans-serif;
+    color:var(--paper);
+  }
+
+  .hero{
+    position:relative;
+    min-height:100vh;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:center;
+    overflow:hidden;
+    background-image:url('assets/hero-bg.jpg');
+    background-size:cover;
+    background-position:center 40%;
+  }
+
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+      to bottom,
+      rgba(10,10,10,0.05) 0%,
+      rgba(10,10,10,0.15) 45%,
+      rgba(10,10,10,0.88) 78%,
+      rgba(10,10,10,0.97) 100%
+    );
+  }
+
+  .hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    max-width:640px;
+    padding:0 1.5rem 8vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:1.9rem;
+  }
+
+  .tag{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    font-size:0.8rem;
+    letter-spacing:0.14em;
+    color:var(--steel);
+  }
+
+  .tag span{color:var(--bolt);}
+
+  .cta{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:1.15rem 2.6rem;
+    background:var(--bolt);
+    color:var(--ink);
+    font-family:'Anton',sans-serif;
+    font-weight:400;
+    font-size:clamp(1.15rem,3.4vw,1.55rem);
+    letter-spacing:0.03em;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    clip-path:polygon(4% 0, 100% 0, 96% 100%, 0% 100%);
+    transition:transform 0.18s ease, background 0.18s ease;
+    animation:rise 0.7s cubic-bezier(.19,1,.22,1) both;
+    animation-delay:0.15s;
+  }
+
+  .cta:hover{
+    background:var(--bolt-dark);
+    transform:translateY(-2px);
+  }
+
+  .cta:active{
+    transform:translateY(0);
+  }
+
+  .cta:focus-visible{
+    outline:3px solid var(--paper);
+    outline-offset:4px;
+  }
+
+  .fine-print{
+    font-size:0.78rem;
+    color:var(--steel);
+    letter-spacing:0.02em;
+  }
+
+  @keyframes rise{
+    from{opacity:0; transform:translateY(18px);}
+    to{opacity:1; transform:translateY(0);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .cta{animation:none;}
+  }
+
+  @media (max-width:480px){
+    .hero-content{padding-bottom:9vh;}
+    .cta{padding:1rem 2.1rem;}
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="tag">AGADIR <span>&bull;</span> ALL LEVELS WELCOME</p>
+      <a href="#" class="cta" aria-label="Start training today">START TRAINING TODAY !</a>
+      <p class="fine-print">First session is on us.</p>
+    </div>
+  </section>
+
+</body>
+</html>
